@@ -6,7 +6,7 @@ O código provisiona uma infra básica contendo:
 
 RECURSO   | TIPO |DESCRIÇÃO
 --------- | ---- | ------
-GCE | Windows Server | Instância de VM para aplicação
+GCE | Windows Server 19 | Instância de VM para aplicação
 GCE | Debian 9 | Instância de VM para banco de dados
 GCS | Bucket | Storage para armazenamento de remote-state
 
