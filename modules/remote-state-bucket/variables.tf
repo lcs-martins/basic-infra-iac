@@ -12,7 +12,7 @@ variable "instance_name" {}
 variable "env" {}
 
 variable "bucket_name" {
-  default = "terraform-gcp-engine-remote-state"
+  default = "terraform-remote-state"
 }
 
 variable "location" {

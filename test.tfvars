@@ -1,27 +1,29 @@
 #
 # DEFAULT
 #
-// GLBOAL
+//GLOBAL
+env                     = "test"
 
-env="test"
+//PROJECT
+region                  = "us-east1"
+zone                    = "us-east1-b"
+credentials             = "../.credentials/credentials.json" // PATH TO credentials.json
+project                 = "teste-env" // PROJECT ID
+company                 = "tecnologia" // USED TO NAME RESOURCES AND TAG'S GENERATION. EX.: COMPANY-ENV, xpt-test
+service_account_email   = "terraform@teste-env.iam.gserviceaccount.com" // A GCP SERVICE ACCOUNT FOR USE BY TERRAFORM
+palavras_chaves         = "upgrade-sgbd" // USED FOR TAG'S GENERATION
 
-// INSTANCES-SETTINGS
+//INSTANCES
+machine_type_db         = "n1-standard-1"
+boot_disk_type          = "pd-standard"
+deletion_protection     = false // true for production envirmont
+image                   = "debian-9-stretch-v20200805"
 
-deletion_protection = false
+# # SNAPSHOT URL IS: 
+# # https://console.cloud.google.com/compute/projects/[ PROJECT NAME ]/global/snapshots/[ SNAPSHOT_ID ]}"
+# snapshot_db_srv         = "https://console.cloud.google.com/compute/projects/[project name]]/global/snapshots/[ snapshot-id ]"
 
-// PROJECT-SETINGS
-
-region = "us-east1"
-zone = "us-east1-b"
-
-#
-# MUDAR A CADA NOVO PROJETO ( CHANGE PER EACH NEW PROJECT )
-#
-
-// user config 
-
-project = "teste-env" // id de projeto gcp ( gcp project id )
-company="tecnologia" // usado para gerar prefixo de nomes de recursos e tags. ( used to generate prefix names of resources and tags. )
-service_account_email = "terraform@teste-env.iam.gserviceaccount.com" // e-mail da conta de serviço responsável pela execução do código terraform.
-machine_type_app = "n1-standard-1" // tipo de maquina para instancia de aplicação. ( type of machine for application instance. )
-machine_type_db = "n1-standard-1" // tipo de maquina para instancia de banco de dados. ( machine type for database instance. )
+# If a script need run or uploaded to instance, ssh configuration need be set:
+ssh_user                = "[ SSH USER NAME ]"
+ssh_key                 = "../.ssh/key" // PATH/TO/PRIVATE/KEY
+ssh_pub_key             = "../.ssh/key.pub" // PATH/TO/PUBLIC/KEY
