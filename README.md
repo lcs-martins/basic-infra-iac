@@ -1,23 +1,38 @@
-## ABOUT
+## SOBRE
 
-This code provides an infrastructure for postgresql database, using VMs (IaaS model) for installation and configuration of Postgresql DBMS.
+Resposítório de códigos terraform.
 
-This environment was designed for the execution of tests, such as:
-- SGBD version upgrade scripts
-- Scripts for cluster change.
-- Other necessary tests that have similarity or are identical to the diagram below.
+O código provisiona uma infra básica contendo:
 
-## ENVIRONMENT:
+RECURSO   | TIPO |DESCRIÇÃO
+--------- | ---- | ------
+GCE | Windows Server 19 | Instância de VM para aplicação
+GCE | Debian 9 | Instância de VM para banco de dados
+GCS | Bucket | Storage para armazenamento de remote-state
 
-Test environment for simple infrastructure containing only database server
+## AMBIENTE:
 
-! [DIAGRAMA_INFRA] (/ img / salutis-infra-template-disco-attached.png)
+Ambiente de teste
 
-## PRECAUTIONS:
+## PRECAUÇÕES:
 
-When provisioning the code infrastructure, always use ** test.tfvars ** for changes, so that you are always safe to work with the necessary settings and unnecessary expenses do not occur.
+Ao provisionar a infraestrutura do código, sempre utilizar **test.tfvars** para alterações, para que você sempre esteja seguro de trabalhar com as configurações necessárias e gastos desnecessários não ocorram.
 
+#### SEGUIR ESTA ORDEM DE EXECUÇÃO PARA O TERRAFORM 
+
+```bash
+
+# mudanças no arquivo .tfvars 
+
+cd remote-state-bucket
+terraform init && terraform apply -var-file='..\..\test.tfvars'
+cd ..
+cd instances
+terraform init && terraform apply -var-file='..\..\test.tfvars'
+
+```
 ## TERRAFORM VERSION
 
-`` terraform
+```bash
 terraform V0.15
+```

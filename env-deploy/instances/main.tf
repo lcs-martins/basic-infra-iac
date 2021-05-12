@@ -5,8 +5,10 @@ provider "google" {
   zone        = var.zone
 }
 
-//terraform {
-//  backend "local" {
-//    // path
-//  }
-//}
+terraform {
+  backend "gcs" {
+    bucket = " BUCKET NAME HERE "
+    path  = "remote-state/terraform.tfstate"
+    credentials = file("${var.credentials}")
+  }
+}
