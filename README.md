@@ -8,10 +8,11 @@ This environment was designed for the execution of tests, such as:
 - Other necessary tests that have similarity or are identical to the diagram below.
 
 ## ENVIRONMENT:
+TODO: build diagram
 
 Test environment for simple infrastructure containing only database server
 
-! [DIAGRAMA_INFRA] (/ img / salutis-infra-template-disco-attached.png)
+! [DIAGRAMA_INFRA] (/ img / ro build diagram .png)
 
 ## PRECAUTIONS:
 
@@ -19,5 +20,5 @@ When provisioning the code infrastructure, always use ** test.tfvars ** for chan
 
 ## TERRAFORM VERSION
 
-`` terraform
+``terraform
 terraform V0.15
