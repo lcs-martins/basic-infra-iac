@@ -9,7 +9,7 @@ region                  = "us-east1"
 zone                    = "us-east1-b"
 credentials             = "../.credentials/credentials.json" // PATH TO credentials.json
 project                 = "teste-env" // PROJECT ID
-company                 = "tecnologia" // USED TO NAME RESOURCES AND TAG'S GENERATION. EX.: COMPANY-ENV, xpt-test
+company                 = "temp-env-test" // USED TO NAME RESOURCES AND TAG'S GENERATION. EX.: COMPANY-ENV, xpt-test
 service_account_email   = "terraform@teste-env.iam.gserviceaccount.com" // A GCP SERVICE ACCOUNT FOR USE BY TERRAFORM
 palavras_chaves         = "upgrade-sgbd" // USED FOR TAG'S GENERATION
 

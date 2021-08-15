@@ -20,7 +20,6 @@ variable "boot_disk_initialize_params_type" {
   default = "pd-standard"
 }
 
-
 variable "instance_deletion_protection" {
   default = false
 }
